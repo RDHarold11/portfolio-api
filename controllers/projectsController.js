@@ -17,6 +17,8 @@ const createProject = async (req, res) => {
       linkDemo: req.body.linkDemo,
       linkCode: req.body.linkCode,
       category: req.body.category,
+      description: req.body.description,
+      color: req.body.color,
     });
     res.status(201).json(result);
   } catch (error) {
@@ -56,6 +58,8 @@ const updateProject = async (req, res) => {
   project.linkDemo = req.body.linkDemo;
   project.linkCode = req.body.linkCode;
   project.category = req.body.category;
+  project.description = req.body.decription;
+  project.color = req.body.color;
 
   const result = await project.save();
   res.json(result);
